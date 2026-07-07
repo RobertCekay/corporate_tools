@@ -1,6 +1,6 @@
 # Dino Management
 
-![Ruby CI](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/ci.yml/badge.svg)
+![Ruby CI](https://github.com/robertcekay/corporate_tools/actions/workflows/ci.yml/badge.svg)
 
 A Ruby refactoring exercise demonstrating clean code practices, object-oriented design, automated testing, and continuous integration.
 
