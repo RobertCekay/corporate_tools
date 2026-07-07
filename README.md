@@ -6,7 +6,7 @@ A Ruby refactoring exercise demonstrating clean code practices, object-oriented 
 
 ## Overview
 
-This project refactors an intentionally unoptimized dinosaur management script into a clean, maintainable Ruby service.
+This project refactors an intentionally unoptimized dinosaur management script into a clean, maintainable Ruby service object.
 
 The application processes dinosaur data and:
 
@@ -30,7 +30,7 @@ The original implementation contained:
 
 - Deeply nested conditional statements.
 - Duplicate health calculation logic.
-- Mixed responsibilities in a single method.
+- Mixed responsibilities inside a single method.
 - Hidden mutation of input data.
 - Missing test coverage.
 
@@ -52,9 +52,9 @@ The refactored version improves this by:
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/robertcekay/corporate_tools.git
 
-cd dino-management
+cd corporate_tools
 ```
 
 Install dependencies:
@@ -65,7 +65,15 @@ bundle install
 
 ## Running the Application
 
-Example:
+The project includes a `main.rb` file that demonstrates running the dinosaur management service with sample data.
+
+Run:
+
+```bash
+ruby main.rb
+```
+
+Example usage:
 
 ```ruby
 require_relative "dino_management"
@@ -108,7 +116,7 @@ X examples, 0 failures
 
 ## Continuous Integration
 
-This project uses GitHub Actions to automatically validate changes.
+This project uses GitHub Actions to automatically validate every change.
 
 Every push and pull request runs:
 
@@ -131,11 +139,24 @@ A pull request will only pass if all specs succeed.
 │   └── dino_management_spec.rb
 │
 ├── dino_management.rb
+├── main.rb
 ├── Gemfile
 ├── Gemfile.lock
 ├── .rspec
 └── README.md
 ```
+
+## Architecture
+
+The application uses a service object pattern.
+
+`DinoManagement.run(dinos)` acts as the public entry point and coordinates:
+
+1. Processing dinosaur records.
+2. Applying business rules.
+3. Generating summary statistics.
+
+Internal calculations are separated into private methods to keep responsibilities isolated and the code easier to maintain.
 
 ## Design Decisions
 
@@ -184,3 +205,5 @@ Possible extensions:
 - Add database persistence.
 - Add API endpoints.
 - Add performance benchmarks.
+
+---
